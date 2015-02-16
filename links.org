@@ -1,0 +1,43 @@
+* Link per la configurazione del secondo bottone della stylus
+** Utilizzo dei driver wacom
+*** [[https://bugzilla.redhat.com/show_bug.cgi?id%3D1031343][{PATCH} Support for N-trig tablet on Sony Vaio Duo 11]]
+    Questo link parla della sostituzione, in Fedora, dei driver evdev
+    con i driver wacom, e offre una personalizzazione preliminare.
+    L'OP inserisce una configurazione propria, pensata esplicitamente
+    per il mio computer ed il mio modello della penna. Questa
+    configurazione viene alla fine inclusa nella versione stabile di
+    Fedora, quindi non ci dovrebbe essere bisogno di altro che
+    installare Fedora.
+**** DOMANDE:
+***** Il puntatore fa flickering in Fedora?
+***** Sarà possibile vedere gli eventi normalmente in =xinput test=?
+***** Come funziona con la versione compilata di xournal?
+***** In caso funzioni su Fedora, come fare a trasportare la configurazione su nixOS?
+**** COLLOCAMENTO TEMPORALE:
+     Ultima update 2014-03-04 01:43:28 EST
+**** POSSIBILI AZIONI SUCCESSIVE
+     Mailing list di Fedora, in cui viene linkato questo e si chiede
+     un miglioramento.
+*** [[http://sourceforge.net/p/linuxwacom/mailman/message/33341077/][Conversazione sulla mailing list linux-wacom]]
+    Questa è la conversazione con Jason Derecke. Quello che ho capito
+    da questa conversazione è come usare i vari strumenti per
+    debuggare gli eventi visti dal kernel (con evemu) oppure da
+    xinput.  Sembra comunque, anche in virtù della conversazione sulla
+    mailing list di xorg, che i driver evdev non vogliano riconoscere
+    il bottone eraser, quindi da questo punto di vista i driver wacom
+    sembrano la mia migliore possibilità.
+*** [[http://linuxwacom.sourceforge.net/index_old.php/howto/inputdev][Linux Wacom Project HOWTO]]
+    Questa dovrebbe essere una guida su come settare gli
+    input-devices.  Contiene una spiegazione delle opzioni che
+    esistono nel settaggio, ma nessuna informazione particolare sui
+    devices N-trig.
+*** [[https://help.ubuntu.com/community/Wacom][Ubuntu Documentation: Wacom]]
+    Questa pagina offre alcuni metodi per fare funzionare la penna su
+    ubuntu:
+**** Editare =/usr/share/X11/xorg.conf.d/50-wacom.conf=
+**** Modificare la configurazione usando =xsetwacom=
+**** Una riconfigurazione del kernel mirata a risolvere problemi del bluetooth
+     Per adesso credo che il mio problema non sia legato al bluetooth,
+     ma all'interpretazione dei driver, quindi lascio momentaneamente
+     perdere questa strada.
+**** Altri tip vari sulla pressione e configurazione di alcuni programmi di grafica.
